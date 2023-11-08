@@ -2,15 +2,20 @@ package execise;
 
 
 public class menseki {
-    private double hight;
-    private double bese;
+    private double tate;
+    private double yoko;
 
-    public menseki(double hight, double bese) {
-        this.hight = hight;
-        this.bese = bese;
+
+    @Override
+    public String toString() {
+        return "menseki{" +
+                "tate=" + tate +
+                ", yoko=" + yoko +
+                '}';
     }
-        public double men () {
-            return (double) (hight * bese);
+
+    public double goukei() {
+            return (double) (tate * yoko);
         }
 
     }
