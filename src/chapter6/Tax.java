@@ -8,6 +8,13 @@ public class Tax {
     private int shotoku;
     private int koujo;
 
+    public Tax(int number, String name, int shotoku, int koujo) {
+        this.number = number;
+        this.name = name;
+        this.shotoku = shotoku;
+        this.koujo = koujo;
+    }
+
     public int getNumber() {
         return number;
     }
@@ -30,6 +37,9 @@ public class Tax {
 
     public void setShotoku(int shotoku) {
         this.shotoku = shotoku;
+        if (koujo > this.shotoku) {
+            koujo = this.shotoku;
+        }
     }
 
     public int getKoujo() {
@@ -42,15 +52,7 @@ public class Tax {
         } else {
             this.koujo = koujo;
         }
-        }
-
-    public Tax( int number, String name,int shotoku, int koujo){
-            this.number = number;
-            this.name = name;
-            this.shotoku = shotoku;
-            this.koujo = koujo;
-        }
-
+    }
 
     @Override
     public String toString() {
@@ -74,10 +76,8 @@ public class Tax {
     public int hashCode() {
         return Objects.hash(number);
     }
+    public int zeigaku() {      // amount of tax
+        return (int)((shotoku - koujo) * 0.1);
 
-    public int zeigaku () {
-            return (int) ((shotoku - koujo) * 0.1);
-
-
-        }
     }
+}
