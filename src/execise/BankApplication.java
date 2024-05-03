@@ -6,7 +6,6 @@ public class BankApplication {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("お名前とIDを入力してください");
-        //名前とIDを取得する
         String name = sc.nextLine();
         String id = sc.nextLine();
 
@@ -100,8 +99,6 @@ class BankAccount{
             System.out.println("金額に誤りがあります。引き出せません。");
         }
     }
-
-
     void getPrefTrans(){
 
     }
